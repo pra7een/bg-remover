@@ -1,0 +1,4 @@
+bg-remover/node_modules/
+server/node_modules/
+server/uploads/
+server/.env
