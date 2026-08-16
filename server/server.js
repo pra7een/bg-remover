@@ -17,7 +17,7 @@ app.post("/remove-bg", upload.single("image"), (req, res) => {
     const output = input + ".png";
 
     exec(
-    `"C:\\Users\\casua\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe" remove_bg.py "${input}" "${output}"`,
+  `python remove_bg.py "${input}" "${output}"`,
     { cwd: __dirname },
     (err, stdout, stderr) => {
 
@@ -34,6 +34,8 @@ app.post("/remove-bg", upload.single("image"), (req, res) => {
 );
 });
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
