@@ -25,7 +25,7 @@ function UploadBox({ image, setImage, setResultImage }) {
     try {
 
       const response = await axios.post(
-        "https://bg-remover-api-r721.onrender.com/remove-bg",
+        "http://localhost:5000/remove-bg",
         formData,
         {
           responseType: "blob",
